@@ -54,7 +54,6 @@ URxvt.secondaryScroll: true
 URxvt.scrollBar: false
 URxvt.scrollTtyKeypress: true
 URxvt.scrollWithBuffer: true
-URxvt*urlLauncher: /usr/bin/icecat
 URxvt*cursorColor: magenta
 URxvt*colorUL: #c5f779
 URxvt*underlineColor: #c5f779
@@ -62,4 +61,3 @@ URxvt.perl-ext-common: default,selection,tabbedex,matcher,osc-xterm-clipboard
 URxvt.underlineURLs: true
 URxvt*modifier: alt
 URxvt*urgentOnBell: true
-URxvt.print-pipe: ~/.local/scripts/unmarshal.pl
