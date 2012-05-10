@@ -1,0 +1,108 @@
+[submodule "vim/bundle/home/burke/.vim/bundle/csapprox"]
+	path = vim/bundle/home/burke/.vim/bundle/csapprox
+	url = git://github.com/godlygeek/csapprox.git
+[submodule "vim/bundle/home/burke/.vim/bundle/ctrlp.vim"]
+	path = vim/bundle/home/burke/.vim/bundle/ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/home/burke/.vim/bundle/doxygen-support.vim"]
+	path = vim/bundle/home/burke/.vim/bundle/doxygen-support.vim
+	url = git://github.com/vim-scripts/doxygen-support.vim.git
+[submodule "vim/bundle/home/burke/.vim/bundle/phpcomplete.vim"]
+	path = vim/bundle/home/burke/.vim/bundle/phpcomplete.vim
+	url = git://github.com/shawncplus/phpcomplete.vim.git
+[submodule "vim/bundle/home/burke/.vim/bundle/phpErrorMarker"]
+	path = vim/bundle/home/burke/.vim/bundle/phpErrorMarker
+	url = git://github.com/vim-scripts/phpErrorMarker.git
+[submodule "vim/bundle/home/burke/.vim/bundle/Pretty-Vim-Python"]
+	path = vim/bundle/home/burke/.vim/bundle/Pretty-Vim-Python
+	url = git://github.com/pfdevilliers/Pretty-Vim-Python.git
+[submodule "vim/bundle/home/burke/.vim/bundle/rainbow_parentheses.vim"]
+	path = vim/bundle/home/burke/.vim/bundle/rainbow_parentheses.vim
+	url = git://github.com/kien/rainbow_parentheses.vim.git
+[submodule "vim/bundle/home/burke/.vim/bundle/ScrollColors"]
+	path = vim/bundle/home/burke/.vim/bundle/ScrollColors
+	url = git://github.com/vim-scripts/ScrollColors.git
+[submodule "vim/bundle/home/burke/.vim/bundle/slimv.vim"]
+	path = vim/bundle/home/burke/.vim/bundle/slimv.vim
+	url = git://github.com/vim-scripts/slimv.vim.git
+[submodule "vim/bundle/home/burke/.vim/bundle/syntastic"]
+	path = vim/bundle/home/burke/.vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/home/burke/.vim/bundle/tabman.vim"]
+	path = vim/bundle/home/burke/.vim/bundle/tabman.vim
+	url = git://github.com/kien/tabman.vim.git
+[submodule "vim/bundle/home/burke/.vim/bundle/tagbar"]
+	path = vim/bundle/home/burke/.vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar
+[submodule "vim/bundle/home/burke/.vim/bundle/vim-coffee-script"]
+	path = vim/bundle/home/burke/.vim/bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/bundle/home/burke/.vim/bundle/vim-conque"]
+	path = vim/bundle/home/burke/.vim/bundle/vim-conque
+	url = git://github.com/rson/vim-conque.git
+[submodule "vim/bundle/home/burke/.vim/bundle/vim-fugitive"]
+	path = vim/bundle/home/burke/.vim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/home/burke/.vim/bundle/vim-indent-guides"]
+	path = vim/bundle/home/burke/.vim/bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "vim/bundle/home/burke/.vim/bundle/vim-pathogen"]
+	path = vim/bundle/home/burke/.vim/bundle/vim-pathogen
+	url = git://github.com/tpope/vim-pathogen.git
+[submodule "vim/bundle/csapprox"]
+	path = vim/bundle/csapprox
+	url = git://github.com/godlygeek/csapprox.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/doxygen-support.vim"]
+	path = vim/bundle/doxygen-support.vim
+	url = git://github.com/vim-scripts/doxygen-support.vim.git
+[submodule "vim/bundle/phpcomplete.vim"]
+	path = vim/bundle/phpcomplete.vim
+	url = git://github.com/shawncplus/phpcomplete.vim.git
+[submodule "vim/bundle/phpErrorMarker"]
+	path = vim/bundle/phpErrorMarker
+	url = git://github.com/vim-scripts/phpErrorMarker.git
+[submodule "vim/bundle/Pretty-Vim-Python"]
+	path = vim/bundle/Pretty-Vim-Python
+	url = git://github.com/pfdevilliers/Pretty-Vim-Python.git
+[submodule "vim/bundle/rainbow_parentheses.vim"]
+	path = vim/bundle/rainbow_parentheses.vim
+	url = git://github.com/kien/rainbow_parentheses.vim.git
+[submodule "vim/bundle/ScrollColors"]
+	path = vim/bundle/ScrollColors
+	url = git://github.com/vim-scripts/ScrollColors.git
+[submodule "vim/bundle/slimv.vim"]
+	path = vim/bundle/slimv.vim
+	url = git://github.com/vim-scripts/slimv.vim.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/tabman.vim"]
+	path = vim/bundle/tabman.vim
+	url = git://github.com/kien/tabman.vim.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar
+[submodule "vim/bundle/vim-coffee-script"]
+	path = vim/bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/bundle/vim-conque"]
+	path = vim/bundle/vim-conque
+	url = git://github.com/rson/vim-conque.git
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/vim-indent-guides"]
+	path = vim/bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "vim/bundle/vim-pathogen"]
+	path = vim/bundle/vim-pathogen
+	url = git://github.com/tpope/vim-pathogen.git
+[submodule "vim/bundle/UltiSnips"]
+	path = vim/bundle/UltiSnips
+	url = git://github.com/vim-scripts/UltiSnips.git
+[submodule "vim/bundle/vim-json.git"]
+	path = vim/bundle/vim-json.git
+	url = git://github.com/helino/vim-json.git
