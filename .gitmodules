@@ -106,3 +106,6 @@
 [submodule "vim/bundle/vim-json.git"]
 	path = vim/bundle/vim-json.git
 	url = git://github.com/helino/vim-json.git
+[submodule "vim/bundle/Diablo3"]
+	path = vim/bundle/Diablo3
+	url = git://github.com/vim-scripts/Diablo3.git
