@@ -1,0 +1,8 @@
+#!/bin/bash
+
+pkg_name=`basename $1 .git`
+dotfile_dir="${0%/bin/*}"
+cd $dotfile_dir
+
+[[ -d "home/.vim/bundle/${pkg_name}" ]] || git submodule add "$1" "home/.vim/bundle/${pkg_name}"
+
