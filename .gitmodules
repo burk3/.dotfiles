@@ -1,3 +1,63 @@
 [submodule "home/.vim/bundle/vim-powerline"]
 	path = home/.vim/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "home/.vim/bundle/Diablo3"]
+	path = home/.vim/bundle/Diablo3
+	url = git://github.com/vim-scripts/Diablo3.git
+[submodule "home/.vim/bundle/Pretty-Vim-Python"]
+	path = home/.vim/bundle/Pretty-Vim-Python
+	url = git://github.com/pfdevilliers/Pretty-Vim-Python.git
+[submodule "home/.vim/bundle/ScrollColors"]
+	path = home/.vim/bundle/ScrollColors
+	url = git://github.com/vim-scripts/ScrollColors.git
+[submodule "home/.vim/bundle/UltiSnips"]
+	path = home/.vim/bundle/UltiSnips
+	url = git://github.com/vim-scripts/UltiSnips.git
+[submodule "home/.vim/bundle/csapprox"]
+	path = home/.vim/bundle/csapprox
+	url = git://github.com/godlygeek/csapprox.git
+[submodule "home/.vim/bundle/ctrlp.vim"]
+	path = home/.vim/bundle/ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "home/.vim/bundle/doxygen-support.vim"]
+	path = home/.vim/bundle/doxygen-support.vim
+	url = git://github.com/vim-scripts/doxygen-support.vim.git
+[submodule "home/.vim/bundle/phpErrorMarker"]
+	path = home/.vim/bundle/phpErrorMarker
+	url = git://github.com/vim-scripts/phpErrorMarker.git
+[submodule "home/.vim/bundle/phpcomplete.vim"]
+	path = home/.vim/bundle/phpcomplete.vim
+	url = git://github.com/shawncplus/phpcomplete.vim.git
+[submodule "home/.vim/bundle/rainbow_parentheses.vim"]
+	path = home/.vim/bundle/rainbow_parentheses.vim
+	url = git://github.com/kien/rainbow_parentheses.vim.git
+[submodule "home/.vim/bundle/slimv.vim"]
+	path = home/.vim/bundle/slimv.vim
+	url = git://github.com/vim-scripts/slimv.vim.git
+[submodule "home/.vim/bundle/syntastic"]
+	path = home/.vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule "home/.vim/bundle/tabman.vim"]
+	path = home/.vim/bundle/tabman.vim
+	url = git://github.com/kien/tabman.vim.git
+[submodule "home/.vim/bundle/tagbar"]
+	path = home/.vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar
+[submodule "home/.vim/bundle/vim-coffee-script"]
+	path = home/.vim/bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "home/.vim/bundle/vim-conque"]
+	path = home/.vim/bundle/vim-conque
+	url = git://github.com/rson/vim-conque.git
+[submodule "home/.vim/bundle/vim-fugitive"]
+	path = home/.vim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "home/.vim/bundle/vim-indent-guides"]
+	path = home/.vim/bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "home/.vim/bundle/vim-json.git"]
+	path = home/.vim/bundle/vim-json.git
+	url = git://github.com/helino/vim-json.git
+[submodule "home/.vim/bundle/vim-pathogen"]
+	path = home/.vim/bundle/vim-pathogen
+	url = git://github.com/tpope/vim-pathogen.git
