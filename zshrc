@@ -94,9 +94,9 @@ setprompt () {
       ;;
   esac
   if which ibam > /dev/null; then
-    PR_APM='$PR_RED${${PR_APM_RESULT[(f)1]}[(w)-2]}%%(${${PR_APM_RESULT[(f)3]}[(w)-1]})$PR_LIGHT_BLUE:'
+    PR_APM='${PR_LIGHT_YELLOW}[${PR_RED}${${PR_APM_RESULT[(f)1]}[(w)-2]}%%(${${PR_APM_RESULT[(f)3]}[(w)-1]})${PR_LIGHT_YELLOW}]'
   elif which apm > /dev/null; then
-    PR_APM='$PR_RED${PR_APM_RESULT[(w)5,(w)6]/\% /%%}$PR_LIGHT_BLUE:'
+    PR_APM='${PR_LIGHT_YELLOW}[$PR_RED${PR_APM_RESULT[(w)5,(w)6]/\% /%%}${PR_LIGHT_YELLOW}]'
   else
     PR_APM=''
   fi
@@ -115,7 +115,7 @@ ${PR_LIGHT_BLUE}${PR_SHIFT_IN}${PR_HBAR}${(e)PR_FILLBAR}${PR_SHIFT_OUT}${(e)PR_G
 ${PR_LIGHT_BLUE}${PR_SHIFT_IN}${PR_LLCORNER}${PR_HBAR}\
 ${PR_LIGHT_YELLOW}>${PR_SHIFT_OUT}${PR_NO_COLOR} '
   
-  RPROMPT='${PR_LIGHT_YELLOW}[${PR_WHITE}%D{%H:%M}${PR_LIGHT_YELLOW}]${PR_LIGHT_BLUE}${PR_SHIFT_IN}${PR_LRCORNER}${PR_SHIFT_OUT}${PR_NO_COLOR}'
+  RPROMPT='${PR_APM}${PR_LIGHT_YELLOW}[${PR_WHITE}%D{%H:%M}${PR_LIGHT_YELLOW}]${PR_LIGHT_BLUE}${PR_SHIFT_IN}${PR_LRCORNER}${PR_SHIFT_OUT}${PR_NO_COLOR}'
   
   PS2=' ${PR_LIGHT_YELLOW}>${PR_NO_COLOR} '
 }
