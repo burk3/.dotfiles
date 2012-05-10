@@ -122,6 +122,8 @@ ${PR_LIGHT_YELLOW}>${PR_SHIFT_OUT}${PR_NO_COLOR} '
 setprompt
 #}}}
 
-keychain ~/.ssh/id_rsa_tactilecactus ~/.ssh/id_rsa
-. ~/.keychain/$HOST-sh
-. ~/.keychain/$HOST-sh-gpg
+if [[ -d ~/.keychain ]]; then
+	keychain ~/.ssh/id_rsa_tactilecactus ~/.ssh/id_rsa
+	. ~/.keychain/$HOST-sh
+	. ~/.keychain/$HOST-sh-gpg
+fi

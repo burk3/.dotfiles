@@ -35,7 +35,9 @@ PS2=" \[$RY\]> \[$RW\]"
 export PS1
 export PS2
 
-keychain ~/.ssh/id_rsa_tactilecactus ~/.ssh/id_rsa
-. ~/.keychain/$HOSTNAME-sh
-. ~/.keychain/$HOSTNAME-sh-gpg
+if [[ -d ~/.keychain ]]; then
+	keychain ~/.ssh/id_rsa_tactilecactus ~/.ssh/id_rsa
+	. ~/.keychain/$HOSTNAME-sh
+	. ~/.keychain/$HOSTNAME-sh-gpg
+fi
 
