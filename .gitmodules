@@ -61,3 +61,6 @@
 [submodule "home/.vim/bundle/vim-pathogen"]
 	path = home/.vim/bundle/vim-pathogen
 	url = git://github.com/tpope/vim-pathogen.git
+[submodule "home/.vim/vim-surround"]
+	path = home/.vim/vim-surround
+	url = git://github.com/tpope/vim-surround.git
