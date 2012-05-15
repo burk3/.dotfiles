@@ -3,6 +3,7 @@ source ~/.zsh/git-prompt/zshrc.sh
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _list _expand _complete _ignored _match _approximate _prefix
+zstyle ':completion:*' condition false
 zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
