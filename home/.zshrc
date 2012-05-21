@@ -22,7 +22,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory autocd extendedglob list_ambiguous
 unsetopt beep nomatch notify bash_auto_list
-bindkey -v
+bindkey -e
 # End of lines configured by zsh-newuser-install
 #
 function precmd {
@@ -123,12 +123,21 @@ ${PR_LIGHT_BLUE}${PR_SHIFT_IN}${PR_HBAR}${(e)PR_FILLBAR}${PR_SHIFT_OUT}${(e)PR_G
 ${PR_LIGHT_BLUE}${PR_SHIFT_IN}${PR_LLCORNER}${PR_HBAR}\
 ${PR_LIGHT_YELLOW}>${PR_SHIFT_OUT}${PR_NO_COLOR} '
   
-	RPROMPT='${(e)PR_APM}${PR_LIGHT_YELLOW}[${PR_WHITE}%D{%H:%M}${PR_LIGHT_YELLOW}]${PR_LIGHT_BLUE}${PR_SHIFT_IN}${PR_LRCORNER}${PR_SHIFT_OUT}${PR_NO_COLOR}'
+	if [ "$TERM" != "linux" ]; then
+		RPROMPT='${(e)PR_APM}${PR_LIGHT_YELLOW}[${PR_WHITE}%D{%H:%M}${PR_LIGHT_YELLOW}]${PR_LIGHT_BLUE}${PR_SHIFT_IN}${PR_LRCORNER}${PR_SHIFT_OUT}${PR_NO_COLOR}'
+	fi
   
   PS2=' ${PR_LIGHT_YELLOW}>${PR_NO_COLOR} '
 }
 setprompt
 #}}}
+
+# fix delete key
+bindkey    "^[[3~"          delete-char
+bindkey    "^[3;5~"         delete-char
+
+# color my ls plox
+alias ls="ls --color"
 
 if [[ -d ~/.keychain ]]; then
 	keychain ~/.ssh/id_rsa_tactilecactus ~/.ssh/id_rsa
