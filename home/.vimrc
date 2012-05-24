@@ -3,7 +3,6 @@ call pathogen#infect()
 
 syntax enable
 colorscheme diablo3
-set t_Co=256
 if &t_Co > 2 || has("gui_running")
   syntax on
 endif
