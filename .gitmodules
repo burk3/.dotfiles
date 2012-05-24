@@ -67,3 +67,6 @@
 [submodule "home/.vim/bundle/vim-easymotion"]
 	path = home/.vim/bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "home/.zsh/fun.sh"]
+	path = home/.zsh/fun.sh
+	url = git://github.com/mikeplus64/fun.sh.git

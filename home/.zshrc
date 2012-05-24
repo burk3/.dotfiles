@@ -1,5 +1,6 @@
 #{{{
 source ~/.zsh/git-prompt/zshrc.sh
+source ~/.zsh/fun.sh/fun.sh
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _list _expand _complete _ignored _match _approximate _prefix
