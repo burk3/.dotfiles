@@ -2,7 +2,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 syntax enable
-colorscheme diablo3
+colorscheme jellybeans
 if &t_Co > 2 || has("gui_running")
   syntax on
 endif
