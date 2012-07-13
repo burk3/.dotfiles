@@ -44,5 +44,13 @@ if [ "$lastchar" != '/' ] && [ "$lastchar" != ':' ]; then
 fi
 
 print "updating $dest"
+
+if [ ! -e "${HOME}/.vimrc" ] || diff home/.vimrc "${dest}/.vimrc" | grep -q 'Bundle'  ; then
+	update_vundle=please
+fi
+	
 rsync $args home/ "$dest"
 
+if [ "$update_vundle" ] ; then
+	vim +BundleInstall +qall
+fi
