@@ -1,10 +1,48 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+set nocompatible
+
+" vundle section {{{
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" my vundles
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-scripts/Diablo3'
+Bundle 'pfdevilliers/Pretty-Vim-Python'
+Bundle 'vim-scripts/ScrollColors'
+Bundle 'vim-scripts/UltiSnips'
+Bundle 'godlygeek/csapprox'
+Bundle 'kien/ctrlp.vim'
+Bundle 'vim-scripts/doxygen-support.vim'
+Bundle 'vim-scripts/phpErrorMarker'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'vim-scripts/slimv.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'kien/tabman.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'rson/vim-conque'
+Bundle 'tpope/vim-fugitive'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'helino/vim-json'
+Bundle 'tpope/vim-pathogen'
+Bundle 'tpope/vim-surround'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'nanotech/jellybeans.vim'
+
+"vundle section }}}
+"
 
 syntax enable
-colorscheme jellybeans
 if &t_Co > 2 || has("gui_running")
   syntax on
+	try
+		colorscheme jellybeans
+	catch /^Vim\%((\a\+)\)\=:E185/
+		colorscheme desert
+	endtry
 endif
 
 " booya. persistent undo. what now
@@ -16,8 +54,6 @@ set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 filetype on
 filetype plugin indent on
 set laststatus=2
-
-" rainbow things
 
 " yey mouse
 set mouse=a
