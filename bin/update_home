@@ -45,7 +45,7 @@ fi
 
 print "updating $dest"
 
-if [ ! -e "${HOME}/.vimrc" ] || diff home/.vimrc "${dest}/.vimrc" | grep -q 'Bundle'  ; then
+if [ ! -e "${HOME}/.vim/bundle/vundle" ] || [ ! -e "${HOME}/.vimrc" ] || diff home/.vimrc "${dest}/.vimrc" | grep -q 'Bundle'  ; then
 	update_vundle=please
 fi
 	
