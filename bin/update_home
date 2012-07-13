@@ -46,6 +46,3 @@ fi
 print "updating $dest"
 rsync $args home/ "$dest"
 
-# remove unwanted files from subdirectories
-rsync $args --delete-after home/.bash/ "${dest}.bash/"
-rsync $args --delete-after --exclude 'tmp' home/.vim/ "${dest}.vim/"
