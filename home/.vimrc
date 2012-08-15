@@ -15,7 +15,6 @@ Bundle 'vim-scripts/UltiSnips'
 Bundle 'godlygeek/csapprox'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/doxygen-support.vim'
-Bundle 'vim-scripts/phpErrorMarker'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'vim-scripts/slimv.vim'
@@ -31,6 +30,7 @@ Bundle 'tpope/vim-pathogen'
 Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'StanAngeloff/php.vim'
 
 "vundle section }}}
 "
