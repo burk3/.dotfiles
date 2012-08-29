@@ -31,6 +31,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'StanAngeloff/php.vim'
+Bundle 'sjl/gundo.vim'
 
 "vundle section }}}
 "
