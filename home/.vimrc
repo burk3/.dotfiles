@@ -32,6 +32,8 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'sjl/gundo.vim'
+Bundle 'arc.vim'
+Bundle 'AndrewRadev/switch.vim'
 
 "vundle section }}}
 "
@@ -90,6 +92,10 @@ au BufNewFile,BufRead *.j set filetype=objj
 
 " no clue
 set t_RV=
+
+" BINDINGS !!!
+
+nnoremap - :Switch<cr>
 
 " epic tab commands of awesome tabbliness
 nnoremap <c-j> gT
