@@ -34,6 +34,7 @@ Bundle 'StanAngeloff/php.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'arc.vim'
 Bundle 'AndrewRadev/switch.vim'
+Bundle 'joonty/vdebug.git'
 
 "vundle section }}}
 "
