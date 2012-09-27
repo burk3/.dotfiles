@@ -35,6 +35,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'arc.vim'
 Bundle 'AndrewRadev/switch.vim'
 Bundle 'joonty/vdebug.git'
+Bundle 'proton'
 
 "vundle section }}}
 "
@@ -43,7 +44,8 @@ syntax enable
 if &t_Co > 2 || has("gui_running")
   syntax on
 	try
-		colorscheme jellybeans
+		set background=light
+		colorscheme proton
 	catch /^Vim\%((\a\+)\)\=:E185/
 		colorscheme desert
 	endtry
@@ -121,6 +123,9 @@ cmap w!! w !sudo tee % >/dev/null
 
 nmap <F8> :TagbarToggle<CR>
 
+" setup some mayansmoke stuff
+let g:mayansmoke_search_visibility=4
+let g:mayansmoke_cursor_line_visibility=2
 " Rainbox Parentheses {{{
 
 nnoremap <leader>R :RainbowParenthesesToggle<cr>
