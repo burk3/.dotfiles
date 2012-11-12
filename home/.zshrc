@@ -76,15 +76,16 @@ setprompt () {
   done
   PR_NO_COLOR="%{$terminfo[sgr0]%}"
 
+	typeset -A altchar
+	set -A altchar ${(s..)terminfo[acsc]}
   PR_SET_CHARSET="%{$terminfo[enacs]%}"
   PR_SHIFT_IN="%{$terminfo[smacs]%}"
   PR_SHIFT_OUT="%{$terminfo[rmacs]%}"
-  PR_HBAR='─'
-  PR_ULCORNER='┌'
-  PR_LLCORNER='└'
-	PR_LRCORNER='┘'
-  PR_URCORNER='┐'
-
+  PR_HBAR=${altchar[q]:--}
+  PR_ULCORNER=${altchar[l]:--}
+  PR_LLCORNER=${altchar[m]:--}
+  PR_LRCORNER=${altchar[j]:--}
+  PR_URCORNER=${altchar[k]:--}
   case $TERM in
     xterm*|rxvt*)
       PR_TITLEBAR=$'%{\e]0;%(!.-=*[ROOT]*=- | .)%n@%m:%~ | ${COLUMNS}x${LINES} | %y\a%}'
