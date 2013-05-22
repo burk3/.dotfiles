@@ -84,8 +84,8 @@ URxvt.scrollBar: false
 URxvt.scrollTtyKeypress: true
 URxvt.scrollWithBuffer: true
 URxvt*cursorColor: magenta
-URxvt*colorUL: #c5f779
-URxvt*underlineColor: #c5f779
+URxvt*colorUL: #a3d557
+URxvt*underlineColor: #a3d557
 URxvt.perl-ext-common: default,selection,tabbedex,matcher,osc-xterm-clipboard
 URxvt.underlineURLs: true
 URxvt*modifier: alt
