@@ -13,14 +13,14 @@ Bundle 'pfdevilliers/Pretty-Vim-Python'
 Bundle 'vim-scripts/ScrollColors'
 Bundle 'godlygeek/csapprox'
 Bundle 'kien/ctrlp.vim'
-Bundle 'vim-scripts/doxygen-support.vim'
+" Bundle 'vim-scripts/doxygen-support.vim'
 Bundle 'shawncplus/phpcomplete.vim'
 " Bundle 'vim-scripts/slimv.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'kien/tabman.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'rson/vim-conque'
+Bundle 'vim-conque'
 Bundle 'tpope/vim-fugitive'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'helino/vim-json'
@@ -86,7 +86,8 @@ let g:ctags_path='/usr/bin/ctags'
 let g:ctags_statusline=1 
 let g:generate_tags=1
 
-" delimitMate settings
+" fancy powerline
+let g:Powerline_symbols = 'unicode'
 
 " extra syntax application
 au BufNewFile,BufRead *.j set filetype=objj
