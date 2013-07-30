@@ -137,7 +137,7 @@ bindkey    "^[3;5~"         delete-char
 
 # color my ls plox
 alias ls="ls --color=auto"
-alias sssh="TERM=xterm-color"
+alias sssh="TERM=xterm-color ssh"
 
 if [[ -d ~/.keychain ]]; then
 	keychain ~/.ssh/id_rsa_tactilecactus ~/.ssh/id_rsa
