@@ -34,6 +34,7 @@ Bundle 'arc.vim'
 Bundle 'AndrewRadev/switch.vim'
 Bundle 'joonty/vdebug.git'
 Bundle 'proton'
+Bundle 'vimoutliner/vimoutliner'
 
 "vundle section }}}
 "
