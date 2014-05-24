@@ -1,4 +1,3 @@
-#{{{
 source ~/.zsh/git-prompt/zshrc.sh
 # The following lines were added by compinstall
 
@@ -25,111 +24,23 @@ unsetopt beep nomatch notify bash_auto_list
 bindkey -e
 # End of lines configured by zsh-newuser-install
 #
-function precmd {
 
-  local TERMWIDTH
-  (( TERMWIDTH = ${COLUMNS} - 1 ))
+# zomg antigen is so dope
+source ~/.zsh/antigen/antigen.zsh
 
+antigen use oh-my-zsh
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle gitfast
+antigen bundle git
+antigen bundle jira
+antigen bundle jsontools
+antigen bundle archlinux
+antigen bundle wd
+antigen bundle systemd
+antigen bundle sudo
+antigen bundle python
+antigen theme agnoster
 
-  ###
-  # Truncate the path if it's too long.
-
-  PR_FILLBAR=""
-  PR_PWDLEN=""
-
-  local gitstatus="$(git_super_status)"
-  local gitsize=0
-  PR_GIT=""
-  if [[ -n "$gitstatus" ]]; then
-    gitsize=${gitstatus%% *}
-    PR_GIT=${gitstatus#* }
-  fi
-
-  local promptsize=${#${(%):---(%n@%m:%l)(%~)--}}
-
-  if [[ "$promptsize + $gitsize" -gt $TERMWIDTH ]]; then
-    ((PR_PWDLEN=$TERMWIDTH - $promptsize))
-  else
-    PR_FILLBAR="\${(l.(($TERMWIDTH - ($promptsize + $gitsize)))..${PR_HBAR}.)}"
-  fi
-	###
-	# Get APM info.
-
-	if which ibam > /dev/null; then
-		PR_APM_RESULT=`ibam --percentbattery`
-	elif which apm > /dev/null; then
-		PR_APM_RESULT=`apm`
-	fi
-
-}
-
-setprompt () {
-  setopt prompt_subst
-  autoload colors zsh/terminfo
-  if [[ "$terminfo[colors]" -ge 8 ]]; then
-    colors
-  fi
-  for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
-    eval PR_$color='%{$reset_color$terminfo[bold]$fg[${(L)color}]%}'
-    eval PR_LIGHT_$color='%{$reset_color$fg[${(L)color}]%}'
-    (( count = $count + 1 ))
-  done
-  PR_NO_COLOR="%{$terminfo[sgr0]%}"
-
-	typeset -A altchar
-	set -A altchar ${(s..)terminfo[acsc]}
-  PR_SET_CHARSET="%{$terminfo[enacs]%}"
-  PR_SHIFT_IN="%{$terminfo[smacs]%}"
-  PR_SHIFT_OUT="%{$terminfo[rmacs]%}"
-  PR_HBAR=${altchar[q]:--}
-  PR_ULCORNER=${altchar[l]:--}
-  PR_LLCORNER=${altchar[m]:--}
-  PR_LRCORNER=${altchar[j]:--}
-  PR_URCORNER=${altchar[k]:--}
-  case $TERM in
-    xterm*|rxvt*)
-      PR_TITLEBAR=$'%{\e]0;%(!.-=*[ROOT]*=- | .)%n@%m:%~ | ${COLUMNS}x${LINES} | %y\a%}'
-      PR_STITLE=''
-      ;;
-    screen*)
-      PR_TITLEBAR=$'%{\e_screen \005 (\005t) | %(!.-=[ROOT]=- | .)%n@%m:%~ | ${COLUMNS}x${LINES} | %y\e\\%}'
-      PR_STITLE=$'%{\ekzsh\e\\%}'
-      ;;
-    *)
-      PR_TITLEBAR=''
-      PR_STITLE=''
-      ;;
-  esac
-  if which ibam > /dev/null; then
-    PR_APM='${PR_LIGHT_YELLOW}[${PR_RED}${${PR_APM_RESULT[(f)1]}[(w)-2]}%%(${${PR_APM_RESULT[(f)3]}[(w)-1]})${PR_LIGHT_YELLOW}]'
-  elif which apm > /dev/null; then
-    PR_APM='${PR_LIGHT_YELLOW}[${PR_RED}${PR_APM_RESULT[(w)5,(w)6]/\% /%%}${PR_LIGHT_YELLOW}]'
-  else
-    PR_APM=''
-  fi
-  PROMPT='${PR_SET_CHARSET}${PR_STITLE}${(e)PR_TITLEBAR}\
-${PR_LIGHT_BLUE}${PR_SHIFT_IN}${PR_ULCORNER}${PR_HBAR}${PR_SHIFT_OUT}${PR_LIGHT_YELLOW}[\
-${PR_LIGHT_GREEN}%n\
-${PR_LIGHT_RED}@\
-${PR_LIGHT_GREEN}%m\
-${PR_LIGHT_BLUE}:\
-${PR_LIGHT_CYAN}%l\
-${PR_LIGHT_YELLOW}][\
-${PR_LIGHT_MAGENTA}%~\
-${PR_LIGHT_YELLOW}]\
-${PR_LIGHT_BLUE}${PR_SHIFT_IN}${PR_HBAR}${(e)PR_FILLBAR}${PR_SHIFT_OUT}${(e)PR_GIT}${PR_SHIFT_IN}${PR_URCORNER}${PR_SHIFT_OUT} \
-
-${PR_LIGHT_BLUE}${PR_SHIFT_IN}${PR_LLCORNER}${PR_HBAR}\
-${PR_LIGHT_YELLOW}>${PR_SHIFT_OUT}${PR_NO_COLOR} '
-  
-	if [ "$TERM" != "linux" ]; then
-		RPROMPT='${(e)PR_APM}${PR_LIGHT_YELLOW}[${PR_NO_COLOR}%D{%H:%M}${PR_LIGHT_YELLOW}]${PR_LIGHT_BLUE}${PR_SHIFT_IN}${PR_LRCORNER}${PR_SHIFT_OUT}${PR_NO_COLOR}'
-	fi
-  
-  PS2=' ${PR_LIGHT_YELLOW}>${PR_NO_COLOR} '
-}
-setprompt
-#}}}
 
 # fix delete key
 bindkey    "^[[3~"          delete-char
