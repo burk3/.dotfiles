@@ -39,7 +39,7 @@ antigen bundle wd
 antigen bundle systemd
 antigen bundle sudo
 antigen bundle python
-antigen theme agnoster
+antigen theme burk3/custom-zsh-stuff themes/agnoster-light
 
 
 # fix delete key
