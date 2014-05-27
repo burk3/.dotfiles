@@ -40,6 +40,7 @@ antigen bundle systemd
 antigen bundle sudo
 antigen bundle python
 antigen theme burk3/custom-zsh-stuff themes/agnoster-light
+antigen apply
 
 
 # fix delete key
