@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 dest=$HOME/
 args="--archive --checksum --compress \
