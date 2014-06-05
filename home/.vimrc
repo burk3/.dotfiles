@@ -35,9 +35,9 @@ Bundle 'AndrewRadev/switch.vim'
 Bundle 'joonty/vdebug.git'
 Bundle 'proton'
 Bundle 'vimoutliner/vimoutliner'
+Bundle 'nginx.vim'
 
 "vundle section }}}
-"
 
 syntax enable
 if &t_Co > 2 || has("gui_running")
@@ -76,6 +76,10 @@ set foldmethod=marker
 
 " python doesnt like tabs
 autocmd FileType py set expandtab
+
+" nginx stuf
+au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif 
+
 
 " c.vim settings
 let c_gnu = 1
