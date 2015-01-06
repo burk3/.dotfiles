@@ -18,11 +18,18 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory autocd extendedglob list_ambiguous
+setopt appendhistory autocd extendedglob list_ambiguous histignorespace
 unsetopt beep nomatch notify bash_auto_list
 bindkey -e
 # End of lines configured by zsh-newuser-install
 #
+
+# LSCOLORS THINGS
+if [[ -f ~/.dir_colors ]] ; then
+	eval $(dircolors -b ~/.dir_colors)
+elif [[ -f /etc/dir_colors ]] ; then
+	eval $(dircolors -b /etc/dir_colors)
+fi
 
 # zomg antigen is so dope
 source ~/.zsh/antigen/antigen.zsh
@@ -38,6 +45,9 @@ antigen bundle wd
 antigen bundle systemd
 antigen bundle sudo
 antigen bundle python
+antigen bundle virtualenv
+antigen bundle virtualenvwrapper
+antigen bundle rbenv
 antigen theme burk3/custom-zsh-stuff themes/agnoster-light
 antigen apply
 
@@ -47,7 +57,6 @@ bindkey    "^[[3~"          delete-char
 bindkey    "^[3;5~"         delete-char
 
 # color my ls plox
-alias ls="ls --color=auto"
 alias sssh="TERM=xterm-color ssh"
 
 if [[ -d ~/.keychain ]]; then
