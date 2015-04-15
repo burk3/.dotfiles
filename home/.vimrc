@@ -65,6 +65,10 @@ set laststatus=2
 " yey mouse
 set mouse=a
 
+" whitespace dopeness
+set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:⇥\ 
+set list
+
 " indentation and comments
 set cindent
 set smartindent
