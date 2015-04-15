@@ -27,6 +27,8 @@ bindkey -e
 # LSCOLORS THINGS
 if [[ -f ~/.dir_colors ]] ; then
 	eval $(dircolors -b ~/.dir_colors)
+elif [[ -f /usr/share/dircolors/dircolors.ansi-light ]] ; then
+	eval $(dircolors -b /usr/share/dircolors/dircolors.ansi-light)
 elif [[ -f /etc/dir_colors ]] ; then
 	eval $(dircolors -b /etc/dir_colors)
 fi
