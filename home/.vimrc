@@ -36,6 +36,8 @@ Bundle 'proton'
 Bundle 'vimoutliner/vimoutliner'
 Bundle 'nginx.vim'
 Bundle 'ekalinin/Dockerfile.vim'
+Bundle 'sirtaj/vim-openscad'
+Bundle 'confluencewiki.vim'
 
 "vundle section }}}
 
