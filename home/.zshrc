@@ -49,7 +49,7 @@ antigen bundle sudo
 antigen bundle python
 antigen bundle virtualenv
 antigen bundle virtualenvwrapper
-antigen bundle rbenv
+#antigen bundle rbenv
 antigen theme burk3/custom-zsh-stuff themes/agnoster-light
 antigen apply
 
