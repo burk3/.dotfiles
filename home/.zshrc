@@ -37,19 +37,30 @@ fi
 source ~/.zsh/antigen/antigen.zsh
 
 antigen use oh-my-zsh
+if [[ $(uname) -eq "Darwin" ]] ; then
+	antigen use osx
+	antigen bundle brew
+fi
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle gitfast
 antigen bundle git
 antigen bundle jira
 antigen bundle jsontools
-antigen bundle archlinux
 antigen bundle wd
-antigen bundle systemd
 antigen bundle sudo
 antigen bundle python
 antigen bundle virtualenv
 antigen bundle virtualenvwrapper
 #antigen bundle rbenv
+
+if which systemctl &>/dev/null ; then
+	antigen bundle systemd
+fi
+
+if which pacman &>/dev/null ; then
+	antigen bundle archlinux
+fi
+
 antigen theme burk3/custom-zsh-stuff themes/agnoster-light
 antigen apply
 
@@ -66,3 +77,9 @@ if [[ -d ~/.keychain ]]; then
 	. ~/.keychain/$HOST-sh
 	. ~/.keychain/$HOST-sh-gpg
 fi
+
+if [[ -d ~/perl5 ]] ; then
+	PERL_MB_OPT="--install_base \"/Users/bcates/perl5\""; export PERL_MB_OPT;
+	PERL_MM_OPT="INSTALL_BASE=/Users/bcates/perl5"; export PERL_MM_OPT;
+fi
+	

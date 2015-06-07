@@ -52,6 +52,9 @@ if &t_Co > 2 || has("gui_running")
 	endtry
 endif
 
+" backspace like every other app please
+set backspace=2
+
 " booya. persistent undo. what now
 set undodir=~/.cache/vim/undodir
 set undofile
@@ -82,6 +85,12 @@ set foldmethod=marker
 
 " python doesnt like tabs
 autocmd FileType py set expandtab
+autocmd FileType py set ts=4
+autocmd FileType py set sw=4
+autocmd FileType json set expandtab
+autocmd FileType json set ts=4
+autocmd FileType json set sw=4
+autocmd FileType html set expandtab
 
 " nginx stuf
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif 
