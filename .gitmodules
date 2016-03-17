@@ -1,6 +1,6 @@
-[submodule "home/.vim/bundle/vundle"]
-	path = home/.vim/bundle/vundle
-	url = git://github.com/gmarik/vundle.git
+[submodule "home/.vim/bundle/Vundle.vim"]
+	path = home/.vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "home/.zsh/antigen"]
 	path = home/.zsh/antigen
 	url = git://github.com/zsh-users/antigen.git
