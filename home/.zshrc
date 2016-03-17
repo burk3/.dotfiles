@@ -38,7 +38,7 @@ source ~/.zsh/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 if [[ $(uname) -eq "Darwin" ]] ; then
-	antigen use osx
+	antigen bundle osx
 	antigen bundle brew
 fi
 antigen bundle zsh-users/zsh-syntax-highlighting
