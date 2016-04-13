@@ -40,7 +40,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 "Plugin 'confluencewiki.vim'
 Plugin 'vim-perl/vim-perl'
 Plugin 'pearofducks/ansible-vim'
-Plugin 'faith/vim-go'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 "vundle section }}}
