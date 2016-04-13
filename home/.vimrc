@@ -7,7 +7,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " my vundles
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-scripts/Diablo3'
 Plugin 'pfdevilliers/Pretty-Vim-Python'
 Plugin 'vim-scripts/ScrollColors'
