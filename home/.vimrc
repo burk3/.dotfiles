@@ -40,13 +40,14 @@ Plugin 'ekalinin/Dockerfile.vim'
 "Plugin 'confluencewiki.vim'
 Plugin 'vim-perl/vim-perl'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'vim-go'
 
 call vundle#end()
 "vundle section }}}
 
 syntax enable
 if &t_Co > 2 || has("gui_running")
-  syntax on
+	syntax on
 	try
 		set background=light
 		colorscheme proton
@@ -72,10 +73,11 @@ set laststatus=2
 set mouse=a
 
 " whitespace dopeness
-set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:⇥\ 
+set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:⇥\
 set list
 
 " indentation and comments
+set expandtab
 set cindent
 set smartindent
 set autoindent
@@ -83,20 +85,23 @@ set tabstop=2
 set shiftwidth=2
 set fo=rocqt
 set comments=sl:/**,mbr:\ *,erx:\ */
-set noexpandtab
 set foldmethod=marker
 
-" python doesnt like tabs
-autocmd FileType py set expandtab
+" lets just only do tabs for go, c, php, c++
+autocmd FileType php set noexpandtab
+autocmd FileType go set noexpandtab
+autocmd FileType c set noexpandtab
+autocmd FileType cpp set noexpandtab
+autocmd FileType sh set noexpandtab
+
+" and set some ts/sw for lang defaults
 autocmd FileType py set ts=4
 autocmd FileType py set sw=4
-autocmd FileType json set expandtab
 autocmd FileType json set ts=4
 autocmd FileType json set sw=4
-autocmd FileType html set expandtab
 
 " nginx stuf
-au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif 
+au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
 
 
 " c.vim settings
@@ -106,7 +111,7 @@ let c_C99 = 1
 
 " ctags.vim settings
 let g:ctags_path='/usr/bin/ctags'
-let g:ctags_statusline=1 
+let g:ctags_statusline=1
 let g:generate_tags=1
 
 " fancy powerline
