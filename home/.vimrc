@@ -41,6 +41,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'vim-perl/vim-perl'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'fatih/vim-go'
+Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()
 "vundle section }}}
