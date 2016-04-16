@@ -83,3 +83,6 @@ if [[ -d ~/perl5 ]] ; then
 	PERL_MM_OPT="INSTALL_BASE=/Users/bcates/perl5"; export PERL_MM_OPT;
 fi
 	
+if [[ -f ~/.zshalias ]] ; then
+  source ~/.zshalias
+fi
