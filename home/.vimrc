@@ -8,7 +8,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " my vundles
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-scripts/Diablo3'
+"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'moonkid196/vim-airline-themes'
+"Plugin 'vim-scripts/Diablo3'
 Plugin 'pfdevilliers/Pretty-Vim-Python'
 Plugin 'vim-scripts/ScrollColors'
 Plugin 'godlygeek/csapprox'
@@ -24,7 +26,6 @@ Plugin 'basepi/vim-conque'
 Plugin 'tpope/vim-fugitive'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'helino/vim-json'
-Plugin 'tpope/vim-pathogen'
 Plugin 'tpope/vim-surround'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'nanotech/jellybeans.vim'
@@ -48,13 +49,13 @@ call vundle#end()
 
 syntax enable
 if &t_Co > 2 || has("gui_running")
-	syntax on
-	try
-		set background=light
-		colorscheme proton
-	catch /^Vim\%((\a\+)\)\=:E185/
-		colorscheme desert
-	endtry
+  syntax on
+  try
+    set background=light
+    colorscheme proton
+  catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme desert
+  endtry
 endif
 
 " backspace like every other app please
@@ -74,7 +75,7 @@ set laststatus=2
 set mouse=a
 
 " whitespace dopeness
-set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:⇥\
+set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:⇥\ 
 set list
 
 " indentation and comments
@@ -116,7 +117,10 @@ let g:ctags_statusline=1
 let g:generate_tags=1
 
 " fancy powerline
-let g:Powerline_symbols = 'unicode'
+"let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'molokai'
+
 
 " extra syntax application
 au BufNewFile,BufRead *.j set filetype=objj
