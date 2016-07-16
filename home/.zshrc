@@ -1,6 +1,6 @@
 # The following lines were added by compinstall
 
-zstyle ':completion:*' completer _list _expand _complete _ignored _match _approximate _prefix
+zstyle ':completion:*' completer _list _expand _oldlist _complete _ignored _match _approximate _prefix
 zstyle ':completion:*' condition false
 zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' list-colors ''
@@ -18,11 +18,12 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory autocd extendedglob list_ambiguous histignorespace
+setopt appendhistory autocd extendedglob list_ambiguous histignorespace interactivecomments prompt_subst
 unsetopt beep nomatch notify bash_auto_list
 bindkey -e
 # End of lines configured by zsh-newuser-install
 #
+
 
 # LSCOLORS THINGS
 if [[ -f ~/.dir_colors ]] ; then
@@ -33,37 +34,57 @@ elif [[ -f /etc/dir_colors ]] ; then
 	eval $(dircolors -b /etc/dir_colors)
 fi
 
-# zomg antigen is so dope
-source ~/.zsh/antigen/antigen.zsh
-
-antigen use oh-my-zsh
-if [[ $(uname) -eq "Darwin" ]] ; then
-	antigen bundle osx
-	antigen bundle brew
-fi
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle gitfast
-antigen bundle git
-antigen bundle jira
-antigen bundle jsontools
-antigen bundle wd
-antigen bundle sudo
-antigen bundle python
-antigen bundle virtualenv
-antigen bundle virtualenvwrapper
-#antigen bundle rbenv
-
-if which systemctl &>/dev/null ; then
-	antigen bundle systemd
+if which -s virtualenvwrapper.sh &>/dev/null ; then
+  source "$(which virtualenvwrapper.sh)"
 fi
 
-if which pacman &>/dev/null ; then
-	antigen bundle archlinux
+ZSH_THEME="agnoster-light"
+
+# zomg zplug is so dope
+#source ~/.zsh/antigen/antigen.zsh
+source ~/.zsh/zplug/init.zsh
+
+
+
+#zplug "robbyrussell/oh-my-zsh"
+zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+zplug "lib/theme-and-appearance", from:oh-my-zsh
+zplug "lib/git", from:oh-my-zsh, if:'(( $+commands[git] ))'
+zplug "tevren/git-zsh-plugin"
+zplug "unixorn/git-extra-commands"
+zplug "hcgraf/zsh-sudo"
+zplug "b4b4r07/emoji-cli"
+zplug "b4b4r07/auto-fu.zsh"
+zplug "felixr/docker-zsh-completion"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting", nice:19
+zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+zplug "plugins/osx", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+zplug "plugins/systemd", from:oh-my-zsh, if:"(( $+commands[systemctl] ))"
+zplug "plugins/archlinux", from:oh-my-zsh, if:"(( $+commands[pacman] ))"
+if [[ $ITERM_PROFILE == "Quakeish" ]] ; then
+  zplug "themes/agnoster", from:oh-my-zsh, nice:18
+else
+  zplug "burk3/agnoster-light", use:agnoster-light.zsh-theme, nice:18
 fi
 
-antigen theme burk3/custom-zsh-stuff themes/agnoster-light
-antigen apply
+#zplug "thvitt/tvline"
 
+# Install plugins if there are plugins that have not been installed
+if ! zplug check; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
+
+
+# zle stuff????
+# zle-line-init () {auto-fu-init;}; zle -N zle-line-init
+# zle -N zle-keymap-select auto-fu-zle-keymap-select
 
 # fix delete key
 bindkey    "^[[3~"          delete-char
