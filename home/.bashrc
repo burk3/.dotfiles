@@ -1,19 +1,3 @@
-alias ls="ls --color"
-alias subfm="mpg123 'http://radio.sub.fm:8529'"
-alias dubstepfm="mpg123 http://72.233.84.175"
-#alias ssh="TERM=xterm-color ssh"
-
-export ds=DEFAULT
-
-function sds { 
-if [ ! -n "$1" ]
-then
-	echo $ds
-else
-	export ds=$1; 
-fi
-}
-
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
