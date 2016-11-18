@@ -43,6 +43,10 @@ Plugin 'vim-perl/vim-perl'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'fatih/vim-go'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'Align'
+Plugin 'cecutil'
+Plugin 'vis'
+Plugin 'atweiden/vim-dragvisuals'
 
 call vundle#end()
 "vundle section }}}
