@@ -2,7 +2,8 @@ if [[ -f "${HOME}/.zshrcpriv" ]]; then
   source "${HOME}/.zshrcpriv"
 fi
 
-# The following lines were added by compinstall
+# vcs debug if you want
+#zstyle ':vcs_info:*+*:*' debug true
 
 zstyle ':completion:*' completer _list _expand _oldlist _complete _ignored _match _approximate _prefix
 zstyle ':completion:*' condition false
@@ -19,9 +20,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
 setopt appendhistory autocd extendedglob list_ambiguous histignorespace interactivecomments prompt_subst
 unsetopt beep nomatch notify bash_auto_list
 bindkey -e
@@ -42,7 +43,6 @@ if which -s virtualenvwrapper.sh &>/dev/null ; then
   source "$(which virtualenvwrapper.sh)"
 fi
 
-#ZSH_THEME="agnoster-light"
 if [[ $ITERM_PROFILE != "Quakeish" ]] ; then
   export POWERLEVEL9K_COLOR_SCHEME="light"
 fi
@@ -52,12 +52,10 @@ fi
 #source ~/.zsh/antigen/antigen.zsh
 source ~/.zsh/zplug/init.zsh
 
-#zplug "robbyrussell/oh-my-zsh"
-zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
-#zplug "lib/theme-and-appearance", from:oh-my-zsh
-zplug "lib/git", from:oh-my-zsh, if:'(( $+commands[git] ))'
-zplug "tevren/git-zsh-plugin"
-zplug "unixorn/git-extra-commands"
+zplug "sharat87/zsh-vim-mode"
+zplug "lib/clipboard", from:oh-my-zsh
+zplug "djui/alias-tips"
+zplug "joel-porquet/zsh-dircolors-solarized"
 zplug "hcgraf/zsh-sudo"
 zplug "b4b4r07/emoji-cli"
 zplug "b4b4r07/auto-fu.zsh"
@@ -83,6 +81,22 @@ fi
 
 zplug load
 
+# legit hg bookmarks biz
+function +vi-hg-current-bmark() {
+  if [[ -n "${hook_com[hg-active-bookmark]}" ]] ; then
+    hook_com[hg-bookmark-string]="$(print_icon 'VCS_BOOKMARK_ICON') ${hook_com[hg-active-bookmark]}"
+    ret=1
+    return 0
+  fi
+}
+
+
+# post zplug zstyle sets
+zstyle ':vcs_info:*' disable bzr cdv darcs mtn svk tla
+zstyle ':vcs_info:hg*:*' use-simple true
+zstyle ':vcs_info:hg*:*' branchformat ""
+zstyle ':vcs_info:hg*+gen-hg-bookmark-string:*' hooks hg-current-bmark
+zstyle ':vcs_info:hg*:*' disable-flavours hg-hgsubversion hg-hgsvn hg-git
 
 # zle stuff????
 # zle-line-init () {auto-fu-init;}; zle -N zle-line-init
