@@ -100,10 +100,11 @@ autocmd FileType cpp set noexpandtab
 autocmd FileType sh set noexpandtab
 
 " and set some ts/sw for lang defaults
-autocmd FileType py set ts=4
-autocmd FileType py set sw=4
+autocmd FileType python set ts=4
+autocmd FileType python set sw=4
 autocmd FileType json set ts=4
 autocmd FileType json set sw=4
+
 
 " nginx stuf
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
@@ -161,6 +162,7 @@ nmap <F8> :TagbarToggle<CR>
 " setup some mayansmoke stuff
 let g:mayansmoke_search_visibility=4
 let g:mayansmoke_cursor_line_visibility=2
+
 " Rainbox Parentheses {{{
 
 nnoremap <leader>R :RainbowParenthesesToggle<cr>
@@ -186,3 +188,8 @@ let g:rbpt_max = 16
 
 
 " }}}
+
+" private vimrc for work stuff ;)
+if filereadable($HOME . "/.vimrc_private")
+  source $HOME/.vimrc_private
+endif
