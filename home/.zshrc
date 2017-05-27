@@ -52,7 +52,6 @@ fi
 #source ~/.zsh/antigen/antigen.zsh
 source ~/.zsh/zplug/init.zsh
 
-zplug "sharat87/zsh-vim-mode"
 zplug "lib/clipboard", from:oh-my-zsh
 zplug "djui/alias-tips"
 zplug "joel-porquet/zsh-dircolors-solarized"
