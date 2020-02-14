@@ -61,7 +61,7 @@ zplug "b4b4r07/auto-fu.zsh"
 zplug "felixr/docker-zsh-completion"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", nice:19
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 zplug "plugins/osx", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 zplug "plugins/systemd", from:oh-my-zsh, if:"(( $+commands[systemctl] ))"
