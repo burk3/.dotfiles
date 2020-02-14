@@ -43,30 +43,27 @@ if which -s virtualenvwrapper.sh &>/dev/null ; then
   source "$(which virtualenvwrapper.sh)"
 fi
 
-if [[ $ITERM_PROFILE != "Quakeish" ]] ; then
-  export POWERLEVEL9K_COLOR_SCHEME="light"
+# p10k boii
+if [[ $MY_PROMPT_PROFILE == "pure" ]] ; then
+  source ~/.p10k.pure.zsh
+else
+  source ~/.p10k.zsh
 fi
 
-
 # zomg zplug is so dope
-#source ~/.zsh/antigen/antigen.zsh
 source ~/.zsh/zplug/init.zsh
 
 zplug "lib/clipboard", from:oh-my-zsh
 zplug "djui/alias-tips"
 zplug "joel-porquet/zsh-dircolors-solarized"
 zplug "hcgraf/zsh-sudo"
-zplug "b4b4r07/emoji-cli"
-zplug "b4b4r07/auto-fu.zsh"
-zplug "felixr/docker-zsh-completion"
+#zplug "b4b4r07/auto-fu.zsh"
+#zplug "felixr/docker-zsh-completion"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
-zplug "plugins/osx", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
-zplug "plugins/systemd", from:oh-my-zsh, if:"(( $+commands[systemctl] ))"
-zplug "plugins/archlinux", from:oh-my-zsh, if:"(( $+commands[pacman] ))"
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+#zplug "plugins/systemd", from:oh-my-zsh, if:"(( $+commands[systemctl] ))"
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 #zplug "thvitt/tvline"
 
