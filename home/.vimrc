@@ -23,8 +23,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-surround'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'StanAngeloff/php.vim'
 Plugin 'sjl/gundo.vim'
 "Plugin 'arc.vim'
 Plugin 'AndrewRadev/switch.vim'
@@ -40,6 +38,15 @@ Plugin 'Align'
 Plugin 'cecutil'
 Plugin 'vis'
 Plugin 'atweiden/vim-dragvisuals'
+Plugin 'ambv/black'
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim'
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
+Plugin 'deoplete-plugins/deoplete-jedi'
 
 call vundle#end()
 "vundle section }}}
@@ -182,6 +189,8 @@ let g:rbpt_max = 16
 
 
 " }}}
+
+let g:deoplete#enable_at_startup = 1
 
 " private vimrc for work stuff ;)
 if filereadable($HOME . "/.vimrc_private")
