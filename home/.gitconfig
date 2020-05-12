@@ -1,0 +1,10 @@
+[user]
+  email = burke.cates@gmail.com
+  name = Burke Cates
+
+[alias]
+  lg = log --graph --decorate --oneline
+  st = status
+
+[include]
+  path=~/.gitconfig.local
