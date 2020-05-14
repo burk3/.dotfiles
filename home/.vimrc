@@ -39,6 +39,7 @@ Plugin 'cecutil'
 Plugin 'vis'
 Plugin 'atweiden/vim-dragvisuals'
 Plugin 'ambv/black'
+Plugin 'gabrielelana/vim-markdown'
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim'
 else
