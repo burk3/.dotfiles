@@ -8,14 +8,10 @@ Plugin 'VundleVim/Vundle.vim'
 
 " my vundles
 Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
 Plugin 'moonkid196/vim-airline-themes'
-"Plugin 'vim-scripts/Diablo3'
 Plugin 'vim-scripts/ScrollColors'
 Plugin 'godlygeek/csapprox'
 Plugin 'kien/ctrlp.vim'
-" Plugin 'vim-scripts/doxygen-support.vim'
-" Plugin 'vim-scripts/slimv.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/tabman.vim'
 Plugin 'majutsushi/tagbar'
@@ -48,6 +44,7 @@ else
   Plugin 'roxma/vim-hug-neovim-rpc'
 endif
 Plugin 'deoplete-plugins/deoplete-jedi'
+Plugin 'deoplete-plugins/deoplete-lsp'
 
 call vundle#end()
 "vundle section }}}
