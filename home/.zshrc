@@ -43,6 +43,9 @@ if which -s virtualenvwrapper.sh &>/dev/null ; then
   source "$(which virtualenvwrapper.sh)"
 fi
 
+# lazy nvm kthx
+export NVM_LAZY_LOAD=true
+
 # p10k boii
 source ~/.p10k.zsh
 
@@ -56,6 +59,7 @@ zplug "hcgraf/zsh-sudo"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "plugins/aws", from:oh-my-zsh
+zplug "lukechilds/zsh-nvm"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 
