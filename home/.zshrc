@@ -48,6 +48,7 @@ export NVM_LAZY_LOAD=true
 
 # p10k boii
 source ~/.p10k.zsh
+[[ -a ~/.work-machine ]] && export POWERLEVEL9K_DISABLE_GITSTATUS=true
 
 # zomg zplug is so dope
 source ~/.zsh/zplug/init.zsh
