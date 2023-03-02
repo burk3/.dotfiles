@@ -46,35 +46,18 @@ fi
 # lazy nvm kthx
 export NVM_LAZY_LOAD=true
 
-# p10k boii
-source ~/.p10k.zsh
-[[ -a ~/.work-machine ]] && export POWERLEVEL9K_DISABLE_GITSTATUS=true
+source ~/.zsh/zsh-snap/znap.zsh
+znap source ohmyzsh/ohmyzsh lib/{clipboard,git}
+znap source joel-porquet/zsh-dircolors-solarized
+znap source zsh-users/zsh-history-substring-search
+znap source zsh-users/zsh-completions
+znap source lukechilds/zsh-nvm
+znap prompt sindresorhus/pure
 
-# zomg zplug is so dope
-source ~/.zsh/zplug/init.zsh
+# supposedly good to load these last
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-syntax-highlighting
 
-zplug "lib/clipboard", from:oh-my-zsh
-zplug "djui/alias-tips"
-zplug "joel-porquet/zsh-dircolors-solarized"
-zplug "hcgraf/zsh-sudo"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-completions"
-zplug "plugins/aws", from:oh-my-zsh
-zplug "lukechilds/zsh-nvm"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "romkatv/powerlevel10k", as:theme, depth:1
-
-#zplug "thvitt/tvline"
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load
 
 # legit hg bookmarks biz
 function +vi-hg-current-bmark() {
@@ -103,12 +86,6 @@ bindkey    "^[3;5~"         delete-char
 
 # color my ls plox
 alias sssh="TERM=xterm-color ssh"
-
-if [[ -d ~/.keychain ]]; then
-  keychain ~/.ssh/id_rsa_tactilecactus ~/.ssh/id_rsa
-  . ~/.keychain/$HOST-sh
-  . ~/.keychain/$HOST-sh-gpg
-fi
 
 if [[ -d ~/perl5 ]] ; then
   PERL_MB_OPT="--install_base \"/Users/bcates/perl5\""; export PERL_MB_OPT;

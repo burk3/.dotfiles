@@ -2,7 +2,7 @@
 
 dest=$HOME/
 args="--archive --checksum --compress \
-      --copy-links --exclude .git \
+      --links --exclude .git \
       --progress --verbose --human-readable"
 
 print()
@@ -45,12 +45,12 @@ fi
 
 print "updating $dest"
 
-if [ ! -e "${HOME}/.vim/bundle/Vundle.vim" ] || [ ! -e "${HOME}/.vimrc" ] || diff home/.vimrc "${dest}/.vimrc" | grep -q 'Plugin'  ; then
-	update_vundle=please
+if [ ! -e "${HOME}/.vim/vim-plug" ] || [ ! -e "${HOME}/.vimrc" ] || diff home/.vimrc "${dest}/.vimrc" | grep -q 'Plug'  ; then
+	update_plug=please
 fi
 	
 rsync $args home/ "$dest"
 
-if [ "$update_vundle" ] ; then
-	vim +PluginInstall +qall
+if [ "$update_plug" ] ; then
+	nvim +PlugInstall +qall
 fi

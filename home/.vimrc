@@ -1,60 +1,43 @@
 set nocompatible
 
-" vundle section {{{
+" plug section {{{
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin()
+Plug 'VundleVim/Vundle.vim'
 
 " my vundles
-Plugin 'vim-airline/vim-airline'
-Plugin 'moonkid196/vim-airline-themes'
-Plugin 'vim-scripts/ScrollColors'
-Plugin 'godlygeek/csapprox'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'kien/tabman.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-fugitive'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'tpope/vim-surround'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'sjl/gundo.vim'
-"Plugin 'arc.vim'
-Plugin 'AndrewRadev/switch.vim'
-Plugin 'proton'
-"Plugin 'vimoutliner/vimoutliner'
-Plugin 'nginx.vim'
-Plugin 'ekalinin/Dockerfile.vim'
-"Plugin 'sirtaj/vim-openscad'
-Plugin 'vim-perl/vim-perl'
-Plugin 'pearofducks/ansible-vim'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'Align'
-Plugin 'cecutil'
-Plugin 'vis'
-Plugin 'atweiden/vim-dragvisuals'
-Plugin 'ambv/black'
-Plugin 'gabrielelana/vim-markdown'
-if has('nvim')
-  Plugin 'Shougo/deoplete.nvim'
-else
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
-endif
-Plugin 'deoplete-plugins/deoplete-jedi'
-Plugin 'deoplete-plugins/deoplete-lsp'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-scripts/ScrollColors'
+" this used to make termcolors work better but idk if its needed anymore
+" Plug 'godlygeek/csapprox'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'kien/tabman.vim'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-fugitive'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-surround'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'sjl/gundo.vim'
+Plug 'arcticicestudio/nord-vim'
+"Plug 'vimoutliner/vimoutliner'
+Plug 'ekalinin/Dockerfile.vim'
+"Plug 'sirtaj/vim-openscad'
+Plug 'vim-perl/vim-perl'
+Plug 'elixir-lang/vim-elixir'
+Plug 'atweiden/vim-dragvisuals'
+Plug 'ambv/black'
+Plug 'gabrielelana/vim-markdown'
 
-call vundle#end()
-"vundle section }}}
+call plug#end()
+"plug section }}}
 
 syntax enable
 if &t_Co > 2 || has("gui_running")
   syntax on
   try
-    set background=light
-    colorscheme proton
+    set background=dark
+    colorscheme nord
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
   endtry
@@ -106,7 +89,9 @@ autocmd FileType json set sw=4
 
 
 " nginx stuf
-au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
+" TODO: add this back whenever i decide i need nginx highlighting again and
+" find the plugin
+" au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
 
 
 " c.vim settings
@@ -122,7 +107,7 @@ let g:generate_tags=1
 " fancy powerline
 "let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'molokai'
+let g:airline_theme = 'nord'
 
 
 " extra syntax application

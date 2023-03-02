@@ -1,6 +1,6 @@
-[submodule "home/.vim/bundle/Vundle.vim"]
-	path = home/.vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "home/.zsh/zplug"]
-	path = home/.zsh/zplug
-	url = https://github.com/zplug/zplug.git
+[submodule "home/.zsh/zsh-snap"]
+	path = home/.zsh/zsh-snap
+	url = https://github.com/marlonrichert/zsh-snap.git
+[submodule "home/.vim/vim-plug"]
+	path = home/.vim/vim-plug
+	url = https://github.com/junegunn/vim-plug.git
